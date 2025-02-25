@@ -7,9 +7,9 @@ client = Anthropic(
 
 def call_llm(message, history):
     with client.messages.stream(
-        max_tokens=1024,
+        max_tokens=8096,
         messages=[{"role": "user", "content": message}],
-        model="claude-3-5-sonnet-20241022",
+        model="claude-3-7-sonnet-20250219",
     ) as stream:
         buffer=""
         for text in stream.text_stream:
